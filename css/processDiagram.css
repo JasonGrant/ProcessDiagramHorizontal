@@ -1,0 +1,242 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Montserrat:100,300,400,700);
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.primaryContainer,
+.barGroup,
+.barTasks,
+.barSpace {
+    width: 100%;
+}
+
+.gridPrimaryLeft,
+.gridPrimaryRight {
+    height: 100%;
+}
+
+.primaryContainer {
+    height: 500px;
+}
+
+.gridPrimaryLeft {
+    width:220px;
+    padding:2px;
+    float: left;
+}
+
+.gridPrimaryRight {
+    overflow:hidden;
+}
+
+.barTasks {
+    background-color: #D0D0D1;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.barSpace > p {
+    color: #305986;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+	font-weight:300;
+    font-size: 16px;
+    text-transform: uppercase;
+	letter-spacing: 7px;
+	margin: 0px;
+	margin-top: 12px;
+	margin-left: 5px;
+	padding-left: 0px;
+}
+
+.tasks,
+.decisions,
+.reviews,
+.milestones {
+	width:9.5%;
+    height:100%;
+	border-radius:6px;
+    margin-left:.25%;
+    margin-right:.25%;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px;
+    float: left;
+    position: relative;
+	overflow: hidden;
+}
+
+.tasks > p,
+.decisions > p,
+.reviews > p,
+.milestones > p {
+    margin-top: 3%;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.25;
+    word-wrap: normal;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+	width: 100%;
+	padding-left: 0px;
+	cursor: default;
+}
+
+.keyGroup {
+	position:absolute;
+	height:20px;
+	top:15px;
+	right:5%;
+}
+.keyColor {
+	display:inline-block;
+	width:30px;
+	height:100%;
+}
+.keyText {
+	display:inline-block;
+	width:60px;
+	height:100%;
+	padding-left:3px;
+	vertical-align:bottom;
+}
+
+@media all and (max-width: 767px) and (min-width: 0px) {
+	.tasks > p,
+	.decisions > p,
+	.reviews > p,
+	.milestones > p {
+		font-size: 8px;
+	}
+	.barSpace > p {
+		letter-spacing:0;
+		font-size: 13px;
+	}
+	.keyGroup {
+	  margin-left:0;
+	}
+	.keyText {
+		width:35px;
+		font-size: 9px;
+	}
+	.keyColor {
+		width:20px;
+	}
+}
+
+@media all and (max-width: 991px) and (min-width: 768px) {
+	.tasks > p,
+	.decisions > p,
+	.reviews > p,
+	.milestones > p {
+		font-size: 10.5px;
+	}
+	.barSpace > p {
+		letter-spacing: 5px;
+	}
+	.keyGroup {
+	  margin-left: 15%;
+	}
+	.keyText {
+		width:45px;
+		font-size: 11px;
+	}
+	.keyColor {
+		width:25px;
+	}
+}
+
+.tasks {
+    background-color:#305986;
+}
+
+.taskHover:hover {
+    /*background-color: #A8B7D0;*/
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+.taskHover > p {
+	cursor: pointer;
+}
+
+.decisionDiamond {
+    display: block;
+    position: absolute;
+	background-color:#66CD00;
+    top: 12px;
+    right:27%;
+    width: 45px;
+	height: 45px;
+    -ms-transform:rotate(45deg); /* IE9 */
+    -moz-transform: rotate(45deg);  /* FF3.5/3.6 */
+    -o-transform: rotate(45deg);  /* Opera 10.5 */
+    -webkit-transform: rotate(45deg);  /* Saf3.1+ */
+    transform: rotate(45deg);  /* Newer browsers */
+    /*filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476); *//* IE6,IE7, but produces nasty results, so I disabled it */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; /* IE8 */
+}
+
+.decisions {
+    background-color:rgba(0,0,0,0.4);
+}
+
+.milestones {
+    background-color:#66CD00;
+}
+
+.reviews {
+    background-color:#494949;
+}
+
+.gridText {
+	font-family: 'Lato', sans-serif;
+	font-weight:400;
+	color: #494949;
+    font-size: 16px;
+    pointer-events: none
+}
+
+#processSwitcher {
+    position: absolute;
+    right: 0;
+    width: 270px;
+    margin-right: 40px;
+    top: 10px;
+    background-color: #f1f1f1;
+    font-weight: 600;
+    font-size: 16px;
+    outline: none;
+}
+
+#processSwitcher:focus {
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
+}
+
+.processSwitcherOption,
+.processSwitcherOption:focus {
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
+      -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+              box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+              padding: 5px 15px 5px 25px;
+}
